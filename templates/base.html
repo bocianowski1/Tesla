@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TESLA SKRR</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>TESLA SKRR</h1>
+    <div class="main-container">
+      <div class="UI-container">
+        <h2>Price Predictor</h2>
+        <form action="{{ url_for('index')}}" method="post">
+          <input
+            type="number"
+            id="kms"
+            name="kms"
+            placeholder="Enter Kilometers Driven"
+          />
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter the Car's Age"
+          />
+          <button type="submit">Predict</button>
+        </form>
+        {% if prediction_info[0] > 0 %}
+        <div class="prediction-container">
+          <h2>
+            Du kan forvente å få omtrent {{ prediction_info[0] }}kr<br />for din
+            {{ prediction_info[2] }} år gamle Tesla Model 3 Long Range<br />
+            som har kjørt {{ prediction_info[1] }}km
+          </h2>
+        </div>
+        {% endif %}
+      </div>
+      <div class="explanation-container">
+        <h2>Project Explanation</h2>
+      </div>
+    </div>
+  </body>
+</html>
