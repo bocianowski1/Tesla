@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <h1>TESLA SKRR</h1>
+    <h1>TESLA SCRAPER</h1>
     <div class="main-container">
       <div class="UI-container">
         <h2>Price Predictor</h2>
@@ -30,18 +30,47 @@
           />
           <button type="submit">Predict</button>
         </form>
-        {% if prediction_info[0] > 0 %}
+        {% if prediction > 0 %}
         <div class="prediction-container">
-          <h2>
-            Du kan forvente å få omtrent {{ prediction_info[0] }}kr<br />for din
-            {{ prediction_info[2] }} år gamle Tesla Model 3 Long Range<br />
-            som har kjørt {{ prediction_info[1] }}km
-          </h2>
+          <h3>
+            Du kan forvente å få omtrent {{ price }}kr for din {{ age }} år
+            gamle Tesla Model 3 Long Range som har kjørt {{ kilometers }} km
+          </h3>
+          <h5>Modellen ble trent på Teslaer hentet 1. november</h5>
         </div>
         {% endif %}
       </div>
       <div class="explanation-container">
-        <h2>Project Explanation</h2>
+        <!-- <h2>Project Explanation</h2>
+        <h3>Web Scrape Finn.no</h3> -->
+        <iframe src="../static/Tesla Scraper.pdf"></iframe>
+      </div>
+    </div>
+    <div class="image-container">
+      <div class="big-image-container">
+        <img class="big" src="../static/Images/comp.png" alt="Comp" />
+      </div>
+      <div class="small-image-container">
+        <img
+          class="small"
+          src="../static/Images/multivariate-reg-longrange.png"
+          alt="Multivariate Regression Long Range"
+        />
+        <img
+          class="small"
+          src="../static/Images/multivariate-reg-performance.png"
+          alt="Multivariate Regression Performance"
+        />
+        <img
+          class="small"
+          src="../static/Images/NN-longrange.png"
+          alt="NN Long Range"
+        />
+        <img
+          class="small"
+          src="../static/Images/NN-performance.png"
+          alt="NN Performance"
+        />
       </div>
     </div>
   </body>

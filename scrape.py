@@ -68,7 +68,6 @@ def get_features(num_pages: int) -> np.ndarray:
             price.append(curr[2])
             
             # add only if title is unique
-            
             if ('LONG RANGE' in title) or ('LR' in title):
                 long_range.append(1)
                 performance.append(0)
